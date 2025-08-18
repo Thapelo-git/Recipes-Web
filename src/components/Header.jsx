@@ -7,7 +7,7 @@ import Logo from '../assets/logo.png'
 import { useTheme } from './ThemeContext';
 
 import { useNavigate } from 'react-router-dom';
-function Header({ setMenuOpen}) {
+function Header({setMenuOpen}) {
  const { theme, toggleTheme } = useTheme();
   
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ function Header({ setMenuOpen}) {
             readOnly
                onClick={() => navigate("/search")}
             />
-            <button className='text-xl text-gray-500'><FaSearch /></button>
+            <button onClick={() => navigate("/search")} className='text-xl text-gray-500'><FaSearch /></button>
              
           </div>
          
@@ -35,7 +35,7 @@ function Header({ setMenuOpen}) {
              
              
             
-            <button className='text-xl '><FaSearch /></button>
+            <button onClick={() => navigate("/search")} className='text-xl '><FaSearch /></button>
             <button onClick={toggleTheme} className='text-xl '>
             {theme === 'light' ? <IoToggle className='text-2xl text-black' />: <FaToggleOff className='text-2xl' />}
          

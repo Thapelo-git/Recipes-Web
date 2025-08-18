@@ -1,10 +1,15 @@
 import React from 'react'
-
+import {useFavorites} from './FAvoritesContext'
+import { useRecipes } from './RecipesContext'
+import RecipeCard from './RecipeCard';
 function Favorites() {
+  const {recipes}=useRecipes()
+  const { favorites} = useFavorites();
+  const favoriteRecipes = recipes.filter(recipe => favorites.includes(recipe.id));
   return (
-    <div>
-      
-    </div>
+    
+      <RecipeCard recipes={favoriteRecipes} />
+  
   )
 }
 

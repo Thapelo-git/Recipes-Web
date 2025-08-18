@@ -8,7 +8,7 @@ import { useRecipes } from './RecipesContext'
 function Dashboard() {
   const {recipes}=useRecipes()
 const allTags = ['Vegetarian', 'Grill', 'Protein', 'Salad', 'Quick', 'Fresh', 'Breakfast','seafood',
-  'vegan','low-carb','bowl','lunch','beef','comfort','side','healthy'
+  'vegan','low-carb','bowl','lunch','comfort','side','healthy'
 ];
 
 const [selectedTag, setSelectedTag] = useState(null);
@@ -16,7 +16,7 @@ const [selectedTag, setSelectedTag] = useState(null);
 
   return (
 
-    <div className='  p-4 flex flex-col justify-start items-start   '>
+    <div className='  p-4 flex flex-col justify-center items-center md:justify-start md:items-start   '>
    
     <TagList allTags={allTags} selectedTag={selectedTag} onTagselect={setSelectedTag}/>
          

@@ -4,7 +4,7 @@
   {
     "id": "rec_001",
     "title": "One-Pot Creamy Tomato Pasta",
-    "image":"https://www.freepik.com/free-psd/delicious-spaghetti-bolognese-with-cherry-tomatoes-basil_406457429.htm#fromView=search&page=1&position=1&uuid=7ecd12e5-4a5c-481d-9480-9f25bbb0a0e7&query=pasta",
+    "image":"./images/salad.jpg",
     "tags": ["vegetarian", "quick"],
     "difficulty": "easy",
     "timeMinutes": 25,
@@ -27,7 +27,7 @@
   {
     "id": "rec_002",
     "title": "Grilled Lemon Herb Chicken",
-    "image": "/images/lemon-chicken.jpg",
+    "image": "./images/lemon-chicken.jpg",
     "tags": ["grill", "protein"],
     "difficulty": "easy",
     "timeMinutes": 30,
@@ -50,7 +50,7 @@
   {
     "id": "rec_003",
     "title": "Vegan Chickpea Curry",
-    "image": "/images/chickpea-curry.jpg",
+    "image": "./images/chickpea-curry.jpg",
     "tags": ["vegan", "spicy", "comfort"],
     "difficulty": "medium",
     "timeMinutes": 35,
@@ -96,7 +96,7 @@
   {
     "id": "rec_006",
     "title": "Avocado Toast with Egg",
-    "image": "/images/avocado-toast.jpg",
+    "image": "./images/avocado-toast.jpg",
     "tags": ["breakfast", "quick"],
     "difficulty": "easy",
     "timeMinutes": 10,

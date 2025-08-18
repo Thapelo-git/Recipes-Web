@@ -39,7 +39,7 @@ const filteredIds = filtered.map(r=>r.id)
         )}
         <ul>
           {filtered.map(recipe => (
-            <li key={recipe.id} onClick={() => navigate(`/recipeDetails/${filteredIds.join(',')}`)} className="p-2 border-b">
+            <li key={recipe.id} onClick={() => navigate(`/filtered/${filteredIds.join(',')}`)} className="p-2 border-b">
               {recipe.title}
             </li>
           ))}

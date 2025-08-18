@@ -24,9 +24,9 @@ function Navbar({ menuOpen, setMenuOpen }) {
 
    
     <div className="flex flex-col mt-2 space-y-4 text-black ">
-    <Link to="/" className='cursor-pointer text-xl'>Recipes</Link>
+    <Link to="/" onClick={() => setMenuOpen(false)} className='cursor-pointer text-xl'>Recipes</Link>
      
-      <Link to="/favorites" className=" text-xl cursor-pointer">Favorites</Link>
+      <Link to="/favorites" onClick={() => setMenuOpen(false)} className=" text-xl cursor-pointer">Favorites</Link>
     
     </div>
   </div>
@@ -39,7 +39,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
         </Link>
         <div className='flex flex-col items-center space-y-8'>
         {
-          isHome ? (
+          isHome ?(
            <div className='w-44 h-10 flex flex-row items-center justify-center bg-orange-300 rounded-lg '>
             <FaBook className='text-l text-black mr-2 ' /> 
             <Link to="/" className='text-black text-lg'>Recipes</Link>
@@ -47,14 +47,16 @@ function Navbar({ menuOpen, setMenuOpen }) {
             
            </div>
           ) :(
-            <div className='w-44 h-10 flex flex-row items-center justify-center bg-white border-2 border-gray-200 rounded-lg '>
-            <FaBook className='text-l text-gray-400 mr-2 ' /> 
-            <Link to="/" className='text-gray-400 text-lg'>Recipes</Link>
+             <div className='w-44 h-10 border-1 border-gray-300 flex flex-row items-center justify-center bg-white rounded-lg '>
+            <FaBook className='text-l text-gray-300 mr-2 ' /> 
+            <Link to="/" className='text-gray-300 text-lg'>Recipes</Link>
             
             
            </div>
           )
-        }{
+        }
+        
+        {
           isFavorites ? (
             <div className='w-44 h-10 flex items-center  justify-center  bg-orange-300 rounded-lg'>
           <MdFavorite className='text-l text-black mr-2' />
@@ -62,11 +64,12 @@ function Navbar({ menuOpen, setMenuOpen }) {
           
         </div>
           ):(
-            <div className='w-44 h-10 flex items-center  justify-center bg-white border-2 border-gray-200 rounded-lg'>
-          <MdFavorite className='text-l text-gray-400 mr-2' />
-          <Link to="/favorites" className='text-gray-400 text-lg'>Favorites</Link>
-          
-        </div>
+            <div className='w-44 h-10 border-1 border-gray-300 flex flex-row items-center justify-center bg-white rounded-lg '>
+            <FaBook className='text-l text-gray-300 mr-2 ' /> 
+            <Link to="/favorites" className='text-gray-300 text-lg'>Favorites</Link>
+            
+            
+           </div>
           )
         }
         
