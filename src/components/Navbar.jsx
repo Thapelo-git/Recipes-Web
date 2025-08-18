@@ -1,16 +1,24 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Lottie from 'lottie-react'
-import chef from '../assets/Chef (1).json'
+//  import chef from '/assets/Chef.json'
 import { Link } from 'react-router-dom'
 import { FaBars, FaBook } from 'react-icons/fa'
-import Logo from '../assets/vegan-huggs-logo-retina.png'
+import Logo from '/assets/vegan-huggs-logo-retina.png'
 import { useLocation } from 'react-router-dom'
 import { MdFavorite } from 'react-icons/md'
+
 function Navbar({ menuOpen, setMenuOpen }) {
 
   const {pathname} = useLocation();
   const isHome = pathname === '/';
   const isFavorites = pathname === '/favorites';
+   const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch("/assets/Chef.json") 
+      .then(res => res.json())
+      .then(data => setAnimationData(data));
+  }, []);
   return (
     <>
     {menuOpen ? (
@@ -82,7 +90,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
       
            
       <div>
-      <Lottie animationData={chef} loop={true} className='w-48 h-58' />
+      <Lottie animationData={animationData} loop={true} className='w-48 h-58' />
       </div>
       </div>
     </nav>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRecipes } from './RecipesContext'
 //import salad from '../images/salad.jpg'
-import gradient from '../assets/gradient.jpg'
+import gradient from '/assets/gradient.jpg'
 
 import { IoMdStarHalf } from 'react-icons/io';
 import { IoArrowBackSharp, IoStarSharp, IoTimeOutline } from 'react-icons/io5';

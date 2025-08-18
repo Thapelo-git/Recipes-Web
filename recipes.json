@@ -4,7 +4,7 @@
   {
     "id": "rec_001",
     "title": "One-Pot Creamy Tomato Pasta",
-    "image":"../assets/one-pot-creamy-tomato.jpg",
+    "image":"/assets/one-pot-creamy-tomato.jpg",
     "tags": ["vegetarian", "quick"],
     "difficulty": "easy",
     "timeMinutes": 25,
@@ -27,7 +27,7 @@
   {
     "id": "rec_002",
     "title": "Grilled Lemon Herb Chicken",
-    "image": "../assets/one-pot-creamy-tomato.jpg",
+    "image": "/assets/one-pot-creamy-tomato.jpg",
     "tags": ["grill", "protein"],
     "difficulty": "easy",
     "timeMinutes": 30,
@@ -50,7 +50,7 @@
   { 
     "id": "rec_003",
     "title": "Vegan Chickpea Curry",
-    "image": "../assets/Coconut-Chickpea-Curry.jpg",
+    "image": "/assets/Coconut-Chickpea-Curry.jpg",
     "tags": ["vegan", "spicy", "comfort"],
     "difficulty": "medium",
     "timeMinutes": 35,
@@ -73,7 +73,7 @@
   {
     "id": "rec_004",
     "title": "Greek Salad",
-    "image": "../assets/chickpea-salad.jpg",
+    "image": "/assets/chickpea-salad.jpg",
     "tags": ["salad", "quick", "fresh"],
     "difficulty": "easy",
     "timeMinutes": 15,
@@ -96,7 +96,7 @@
   {
     "id": "rec_006",
     "title": "Avocado Toast with Egg",
-    "image": "../assets/avocado-breakfast-sandwich.webp",
+    "image": "/assets/avocado-breakfast-sandwich.webp",
     "tags": ["breakfast", "quick"],
     "difficulty": "easy",
     "timeMinutes": 10,
@@ -118,7 +118,7 @@
   {
     "id": "rec_007",
     "title": "Garlic Butter Shrimp",
-    "image": "../assets/Garlic-Butter-Shrimp.webp",
+    "image": "/assets/Garlic-Butter-Shrimp.webp",
     "tags": ["seafood", "quick"],
     "difficulty": "easy",
     "timeMinutes": 15,
@@ -141,7 +141,7 @@
   {
     "id": "rec_008",
     "title": "Quinoa Buddha Bowl",
-    "image": "../assets/greek-bowl.jpg",
+    "image": "/assets/greek-bowl.jpg",
     "tags": ["vegan", "bowl", "healthy"],
     "difficulty": "easy",
     "timeMinutes": 30,
@@ -163,7 +163,7 @@
   {
     "id": "rec_009",
     "title": "Margherita Pizza",
-    "image": "../assets/margherita-pizza-recipes.jpg",
+    "image": "/assets/margherita-pizza-recipes.jpg",
     "tags": ["baking", "comfort"],
     "difficulty": "medium",
     "timeMinutes": 40,
@@ -186,7 +186,7 @@
   {
     "id": "rec_010",
     "title": "Tomato Basil Soup",
-    "image": "../assets/Creamy-Tomato-Basil-Soup.jpg",
+    "image": "/assets/Creamy-Tomato-Basil-Soup.jpg",
     "tags": ["soup", "comfort", "vegetarian"],
     "difficulty": "easy",
     "timeMinutes": 30,
@@ -209,7 +209,7 @@
   {
     "id": "rec_013",
     "title": "Caprese Sandwich",
-    "image": "../assets/caprese-sanwich.jpg",
+    "image": "/assets/caprese-sanwich.jpg",
     "tags": ["vegetarian", "quick", "lunch"],
     "difficulty": "easy",
     "timeMinutes": 10,
@@ -232,7 +232,7 @@
   {
     "id": "rec_015",
     "title": "Pesto Zoodles",
-    "image": "../assets/Zucchini-Noodles.webp",
+    "image": "/assets/Zucchini-Noodles.webp",
     "tags": ["low-carb", "vegetarian", "quick"],
     "difficulty": "easy",
     "timeMinutes": 15,
@@ -254,7 +254,7 @@
   {
     "id": "rec_021",
     "title": "Garlic Roasted Cauliflower",
-    "image": "../assets/roasted-cauliflower.webp",
+    "image": "/assets/roasted-cauliflower.webp",
     "tags": ["vegan", "side", "quick"],
     "difficulty": "easy",
     "timeMinutes": 25,
@@ -276,7 +276,7 @@
   {
     "id": "rec_025",
     "title": "Berry Yogurt Parfait",
-    "image": "../assets/yogurt-parfait.jpg",
+    "image": "/assets/yogurt-parfait.jpg",
     "tags": ["breakfast", "quick", "fresh"],
     "difficulty": "easy",
     "timeMinutes": 8,

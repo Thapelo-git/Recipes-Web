@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaBars, FaToggleOff } from 'react-icons/fa'
 import { FaSearch } from 'react-icons/fa'
 import { IoToggle, IoToggleOutline } from "react-icons/io5";
-import Logo from '../assets/vegan-huggs-logo-retina.png'
+import Logo from '/assets/vegan-huggs-logo-retina.png'
 import { useTheme } from './ThemeContext';
 
 import { useNavigate } from 'react-router-dom';
