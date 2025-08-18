@@ -15,18 +15,19 @@ const [selectedTag, setSelectedTag] = useState(null);
 
 
   return (
-
-    <div className='  p-4 flex flex-col justify-center items-center md:justify-start md:items-start   '>
+<>
+    <div className='  p-4 flex   justify-start items-start   '>
    
     <TagList allTags={allTags} selectedTag={selectedTag} onTagselect={setSelectedTag}/>
-         
-<div className='py-36'>
+             </div>
+<div className='py-32 '>
        {
       recipes.length > 0 ? <RecipeCard recipes={recipes} selectedTag={selectedTag}/>:'No Recipes To Show'
      }
    
-     </div>
+ 
     </div>
+    </>
   )
 }
 

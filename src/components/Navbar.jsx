@@ -3,7 +3,7 @@ import Lottie from 'lottie-react'
 import chef from '../assets/Chef (1).json'
 import { Link } from 'react-router-dom'
 import { FaBars, FaBook } from 'react-icons/fa'
-import Logo from '../assets/logo.png'
+import Logo from '../assets/vegan-huggs-logo-retina.png'
 import { useLocation } from 'react-router-dom'
 import { MdFavorite } from 'react-icons/md'
 function Navbar({ menuOpen, setMenuOpen }) {
@@ -35,7 +35,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
  <nav className=' h-full bg-white flex flex-col items-center justify-between p-4 '>
       <div className='flex flex-col items-center justify-between h-full'>
         <Link to="/">
-        <img src={Logo} alt='Logo' className='w-34 h-34 mb-4' />
+        <img src={Logo} alt='Logo' className='w-44 h-34 mb-4' />
         </Link>
         <div className='flex flex-col items-center space-y-8'>
         {

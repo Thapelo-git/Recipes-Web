@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useRecipes } from './RecipesContext'
 //import salad from '../images/salad.jpg'
 import gradient from '../assets/gradient.jpg'
-import pasta from '../assets/pasta.jpg'
+
 import { IoMdStarHalf } from 'react-icons/io';
 import { IoArrowBackSharp, IoStarSharp, IoTimeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom'
@@ -72,16 +72,16 @@ function RecipeDetails() {
           </button>
         </div>
         </div>
-      <div className='md:flex md:justify-between md:items-center w-full gap-2'>
-      <div className='md:order-2 flex justify-center w-1/2 h-full'>
+      <div className='md:flex md:justify-between md:items-center  gap-2'>
+      <div className='md:order-2 flex justify-center   h-full'>
       
-                   <img src={pasta} className=' md:max-w-[400px] shadow-xl/30'/>
+                   <img src={item.image} className=' md:max-w-[400px] shadow-xl/30'/>
 
                 </div>
            
 
      
-       <div className=" relative md:order-1 w-1/2 p-4 flex flex-col justify-center items-center bg-white/30 rounded-xl backdrop-invert backdrop-opacity-10
+       <div className=" relative md:order-1  p-4 flex flex-col justify-center items-center bg-white/30 rounded-xl backdrop-invert backdrop-opacity-10
         h-full inset-y-0 left-0 gap-4">
         
        <div className="flex flex-row items-center mt-2 self-start">

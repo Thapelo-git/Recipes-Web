@@ -39,8 +39,15 @@ const filteredIds = filtered.map(r=>r.id)
         )}
         <ul>
           {filtered.map(recipe => (
-            <li key={recipe.id} onClick={() => navigate(`/filtered/${filteredIds.join(',')}`)} className="p-2 border-b">
-              {recipe.title}
+            <li key={recipe.id} onClick={() => navigate(`/filtered/${filteredIds.join(',')}`)}
+             className="p-2 flex flex-row gap-8 border-b">
+               <img src={recipe.image}  className='shadow-lg h-16 w-16 rounded-full'/>
+              <div className='flex flex-col gap-4 items-center justify-center'>
+                {recipe.title}
+               <p className='text-gray-400'>{recipe.dietary}</p>
+              
+              </div>
+            
             </li>
           ))}
         </ul>
