@@ -27,7 +27,7 @@
   {
     "id": "rec_002",
     "title": "Grilled Lemon Herb Chicken",
-    "image": "/assets/one-pot-creamy-tomato.jpg",
+    "image": "/assets/Grilled-lemon-Herb-Chicken.jpg",
     "tags": ["grill", "protein"],
     "difficulty": "easy",
     "timeMinutes": 30,
@@ -163,7 +163,7 @@
   {
     "id": "rec_009",
     "title": "Margherita Pizza",
-    "image": "/assets/margherita-pizza-recipes.jpg",
+    "image": "/assets/margherita-pizza-recipe.jpg",
     "tags": ["baking", "comfort"],
     "difficulty": "medium",
     "timeMinutes": 40,
@@ -209,7 +209,7 @@
   {
     "id": "rec_013",
     "title": "Caprese Sandwich",
-    "image": "/assets/caprese-sanwich.jpg",
+    "image": "/assets/caprese-sandwich.jpg",
     "tags": ["vegetarian", "quick", "lunch"],
     "difficulty": "easy",
     "timeMinutes": 10,

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRecipes } from './RecipesContext'
 //import salad from '../images/salad.jpg'
-import gradient from '/assets/gradient.jpg'
-
+//import gradient from '/assets/gradient.jpg'
+import { useTheme } from './ThemeContext';
 import { IoMdStarHalf } from 'react-icons/io';
 import { IoArrowBackSharp, IoStarSharp, IoTimeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom'
@@ -15,6 +15,7 @@ function RecipeDetails() {
     const {recipes} = useRecipes()
     const navigate = useNavigate();
     const [item,setItem]=useState(null)
+     const { theme } = useTheme();
     useEffect(()=>{
         const Details = recipes.find(r=>r.id === id)
     setItem(Details)
@@ -38,14 +39,17 @@ function RecipeDetails() {
 ];
  const dietaryColors = [
   
-  "bg-purple-400",
-  "bg-pink-400",
-  "bg-green-400",
+  "bg-purple-300",
+  "bg-pink-300",
+  "bg-green-300",
   "bg-blue-400",
 
 ];
+const bgColor = theme === 'light'?"bg-white":"bg-black"
+ const textColor = theme === 'light'?"text-gray-700":"text-gray-400"
   return (
-    <div className=' p-4 h-screen w-full 'style={{ backgroundImage: `url(${gradient})` }}>
+    <div className={` p-4 h-screen w-full ${textColor}  ${bgColor}`}>
+     {/* <div className=' p-4 h-screen w-full 'style={{ backgroundImage: `url(${gradient})` }}> */}
       <div className='flex justify-between items-center h-16 '>
     <button
           onClick={() => navigate(-1)}
@@ -73,15 +77,15 @@ function RecipeDetails() {
         </div>
         </div>
       <div className='md:flex md:justify-between md:items-center  gap-2'>
-      <div className='md:order-2 flex justify-center   h-full'>
+      <div className={`md:order-2 flex justify-center w-screen p-12 rounded-full ${theme?'bg-white/5  backdrop-invert backdrop-opacity-5':'bg-white'} h-118`}>
       
-                   <img src={item.image} className=' md:max-w-[400px] shadow-xl/30'/>
+                   <img src={item.image} className='rounded-full w-80 '/>
 
                 </div>
            
 
      
-       <div className=" relative md:order-1  p-4 flex flex-col justify-center items-center bg-white/30 rounded-xl backdrop-invert backdrop-opacity-10
+       <div className=" relative md:order-1 w-screen  p-4 flex flex-col justify-center items-center bg-white/30 rounded-xl backdrop-invert backdrop-opacity-2
         h-full inset-y-0 left-0 gap-4">
         
        <div className="flex flex-row items-center mt-2 self-start">
@@ -139,12 +143,12 @@ function RecipeDetails() {
     
   }
      </div>
-      <div className='flex flex-row  mt-2 self-start'>
+      <div className='flex flex-row gap-4  mt-2 self-start'>
        {
     item.dietary.map(( value,index) => (
         <div
       key={index}
-      className={`flex justify-center items-center   p-3 rounded-full ${dietaryColors[index % dietaryColors.length]}`}
+      className={`flex justify-center items-center   p-2 rounded-full ${dietaryColors[index % dietaryColors.length]}`}
     >
       <p className="font-medium text-gray-200">{value}</p>
      

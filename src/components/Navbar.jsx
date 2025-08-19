@@ -6,14 +6,15 @@ import { FaBars, FaBook } from 'react-icons/fa'
 import Logo from '/assets/vegan-huggs-logo-retina.png'
 import { useLocation } from 'react-router-dom'
 import { MdFavorite } from 'react-icons/md'
-
+import { useTheme } from './ThemeContext';
 function Navbar({ menuOpen, setMenuOpen }) {
-
+const { theme } = useTheme();
   const {pathname} = useLocation();
   const isHome = pathname === '/';
   const isFavorites = pathname === '/favorites';
    const [animationData, setAnimationData] = useState(null);
-
+ const bgColor = theme === 'light'?"bg-white":"bg-black"
+ const textColor = theme === 'light'?"text-black":"text-white"
   useEffect(() => {
     fetch("/assets/Chef.json") 
       .then(res => res.json())
@@ -22,16 +23,16 @@ function Navbar({ menuOpen, setMenuOpen }) {
   return (
     <>
     {menuOpen ? (
-  <div className="md:hidden absolute top-0 left-0 w-full  h-screen bg-white z-50 px-6 py-4">
+  <div className={`md:hidden absolute top-0 left-0 w-full  h-screen ${bgColor} z-50 px-6 py-4`}>
     
     <div className="flex justify-start w-1/4 ">
-      <button onClick={() => setMenuOpen(false)} className="text-3xl  text-black">
+      <button onClick={() => setMenuOpen(false)} className={`text-3xl ${bgColor} `}>
         &times; 
       </button>
     </div>
 
    
-    <div className="flex flex-col mt-2 space-y-4 text-black ">
+    <div className={`flex flex-col mt-2 space-y-4 ${textColor} `}>
     <Link to="/" onClick={() => setMenuOpen(false)} className='cursor-pointer text-xl'>Recipes</Link>
      
       <Link to="/favorites" onClick={() => setMenuOpen(false)} className=" text-xl cursor-pointer">Favorites</Link>
@@ -39,8 +40,8 @@ function Navbar({ menuOpen, setMenuOpen }) {
     </div>
   </div>
 ):(
-  <div className='hidden md:block w-[20%] bg-white h-screen fixed top-0 pt-10 left-0'>
- <nav className=' h-full bg-white flex flex-col items-center justify-between p-4 '>
+  <div className={`hidden md:block w-[20%] ${bgColor} h-screen fixed top-0 pt-10 left-0`}>
+ <nav className={`h-full ${bgColor} flex flex-col items-center justify-between p-4 `}>
       <div className='flex flex-col items-center justify-between h-full'>
         <Link to="/">
         <img src={Logo} alt='Logo' className='w-44 h-34 mb-4' />
@@ -90,7 +91,10 @@ function Navbar({ menuOpen, setMenuOpen }) {
       
            
       <div>
-      <Lottie animationData={animationData} loop={true} className='w-48 h-58' />
+        {
+         theme === 'light' && (<Lottie animationData={animationData} loop={true} className='w-48 h-58' />)
+        }
+      
       </div>
       </div>
     </nav>
