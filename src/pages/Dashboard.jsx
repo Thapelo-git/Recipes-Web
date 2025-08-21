@@ -1,13 +1,13 @@
 import React,{useState} from 'react'
 //https://dribbble.com/shots/20994352-Chef-Website-Design
-import Header from './Header'
-import RecipeCard from './RecipeCard'
-import Navbar from './Navbar'
-import TagList from './TagList'
-import { useRecipes } from './RecipesContext'
+import Header from '../components/Header'
+import RecipeCard from '../components/RecipeCard'
+import Navbar from '../components/Navbar'
+import TagList from '../components/TagList'
+import { useRecipes } from '../contexts/RecipesContext'
 function Dashboard() {
   const {recipes}=useRecipes()
-const allTags = ['Vegetarian', 'Grill', 'Protein', 'Salad', 'Quick', 'Fresh', 'Breakfast','seafood',
+const allTags = ['All','Vegetarian', 'Grill', 'Protein', 'Salad', 'Quick', 'Fresh', 'Breakfast','seafood',
   'vegan','low-carb','bowl','lunch','comfort','side','healthy'
 ];
 
@@ -20,7 +20,7 @@ const [selectedTag, setSelectedTag] = useState(null);
    
     <TagList allTags={allTags} selectedTag={selectedTag} onTagselect={setSelectedTag}/>
              </div>
-<div className='py-32 '>
+<div className='py-32 flex '>
        {
       recipes.length > 0 ? <RecipeCard recipes={recipes} selectedTag={selectedTag}/>:'No Recipes To Show'
      }

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 function TagList({allTags,selectedTag,onTagselect}) {
  const { theme } = useTheme();
   const [showAll, setShowAll] = useState(false);
@@ -18,7 +18,13 @@ const tagTheme =
       onClick={() => onTagselect(tag)}
       className={`p-2 rounded-lg m-2 
          ${tagTheme}
-        ${selectedTag === tag ? "ring-2 ring-white":""}
+        ${selectedTag === tag ?
+  
+               theme === "light"
+                ? "ring-2 ring-orange-400"
+                : "ring-2 ring-white"
+              : ""
+        }
         
       `}
     >
@@ -48,7 +54,7 @@ const tagTheme =
                 setShowAll(false);
               }}
               className={`block w-full text-left p-2 rounded 
-                ${tagTheme}
+                
                 ${selectedTag === tag ? "ring-2 ring-white":""}
               `}
             >

@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useRecipes } from './RecipesContext'
+
 //import salad from '../images/salad.jpg'
 //import gradient from '/assets/gradient.jpg'
-import { useTheme } from './ThemeContext';
+
 import { IoMdStarHalf } from 'react-icons/io';
 import { IoArrowBackSharp, IoStarSharp, IoTimeOutline } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom'
-import {useFavorites} from './FAvoritesContext'
+
 import { FaCircle, FaHeart } from 'react-icons/fa'
+import { useRecipes } from '../contexts/RecipesContext';
+import { useTheme } from '../contexts/ThemeContext';
+import { useFavorites } from '../contexts/FAvoritesContext';
 //https://dribbble.com/shots/23548096-Food-Website
 function RecipeDetails() {
     const {id} =useParams()
     const {recipes} = useRecipes()
     const navigate = useNavigate();
     const [item,setItem]=useState(null)
-     const { theme } = useTheme();
+     const { theme } = useTheme()
     useEffect(()=>{
         const Details = recipes.find(r=>r.id === id)
     setItem(Details)
     },[id,recipes])
     
-      const { isFavorite, addFavorite, removeFavorite } = useFavorites();
+      const { isFavorite, addFavorite, removeFavorite } = useFavorites()
     const fav = isFavorite(id);
 
     if(!item){
@@ -31,29 +34,29 @@ function RecipeDetails() {
     }
     const colors = [
   
-  "bg-green-100",
-  "bg-blue-100",
-  
-  "bg-purple-100",
-  "bg-pink-100",
-];
- const dietaryColors = [
+  "bg-green-300",
+  "bg-blue-300",
   
   "bg-purple-300",
   "bg-pink-300",
+];
+ const dietaryColors = [
+  "bg-pink-300",
+  "bg-purple-300",
+  
   "bg-green-300",
   "bg-blue-400",
 
 ];
-const bgColor = theme === 'light'?"bg-white":"bg-black"
+const bgColor = theme === 'light'?"bg-gray-100":"bg-black"
  const textColor = theme === 'light'?"text-gray-700":"text-gray-400"
   return (
-    <div className={` p-4 h-screen w-full ${textColor}  ${bgColor}`}>
+    <div className={` p-4 h-screen w-full flex flex-col ${textColor}  ${bgColor}`}>
      {/* <div className=' p-4 h-screen w-full 'style={{ backgroundImage: `url(${gradient})` }}> */}
       <div className='flex justify-between items-center h-16 '>
-    <button
+         <button
           onClick={() => navigate(-1)}
-          className="text-right "
+          
         >
           <IoArrowBackSharp/>
         </button>
@@ -79,13 +82,14 @@ const bgColor = theme === 'light'?"bg-white":"bg-black"
       <div className='md:flex md:justify-between md:items-center  gap-2'>
       <div className={`md:order-2 flex justify-center w-screen p-12 rounded-full ${theme?'bg-white/5  backdrop-invert backdrop-opacity-5':'bg-white'} h-118`}>
       
-                   <img src={item.image} className='rounded-full w-80 '/>
+                   <img src={item.image} className='rounded-full w-90 '/>
 
                 </div>
            
 
      
-       <div className=" relative md:order-1 w-screen  p-4 flex flex-col justify-center items-center bg-white/30 rounded-xl backdrop-invert backdrop-opacity-2
+       <div className=" relative md:order-1 w-screen  p-4 flex flex-col justify-center 
+       items-center bg-white/5 rounded-xl backdrop-invert backdrop-opacity-5
         h-full inset-y-0 left-0 gap-4">
         
        <div className="flex flex-row items-center mt-2 self-start">
@@ -95,7 +99,7 @@ const bgColor = theme === 'light'?"bg-white":"bg-black"
   {
     Object.entries(item.nutrition).map(([key, value]) => (
         <div key={key} className='flex justify-center items-center flex-col gap-2 w-18 '>
-          <p className='font-medium'>{value}</p>
+          <p className='font-medium text-black'>{value}</p>
           <p className='text-gray-400'>{key}</p>
         </div>
       ))

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRecipes } from './RecipesContext'
+import { useRecipes } from '../contexts/RecipesContext'
 import { useParams } from 'react-router-dom';
 import RecipeCard from './RecipeCard';
 function FilteredRecipes() {

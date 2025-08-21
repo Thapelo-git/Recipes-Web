@@ -4,12 +4,12 @@ import { IoMdStarHalf } from 'react-icons/io';
 import { IoStarSharp, IoTimeOutline } from 'react-icons/io5';
 import { MdOutlineStarOutline } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
-import {useFavorites} from './FAvoritesContext'
-import { useTheme } from './ThemeContext';
+import {useFavorites} from '../contexts/FAvoritesContext'
+import { useTheme } from '../contexts/ThemeContext';
 function RecipeCard({recipes,selectedTag}) {
   const navigate = useNavigate()
   const { theme } = useTheme();
- const filteredRecipes = selectedTag
+ const filteredRecipes = selectedTag && selectedTag !== 'All'
  ?recipes.filter(recipe =>
   recipe.tags.some(tag => tag.toLowerCase() === selectedTag.toLowerCase())
 ): recipes;
@@ -26,7 +26,7 @@ function RecipeCard({recipes,selectedTag}) {
                 const fav = isFavorite(recipe.id);
                 return (
                 <div key={index} 
-                className={`md:snap-center md:snap-always 
+                className={`md:snap-center md:snap-always  hover:border-2 hover:border-orange-400
                 ${theme === 'light' ?'bg-white':'bg-white/5  backdrop-invert backdrop-opacity-10'}  p-4 rounded-xl h-90 w-100  md:w-72  gap-3 flex flex-col items-center `}>
                  <div className='h-58 w-48 '>
                   <img src={recipe.image}  className='h-48 w-68 rounded-xl  top-0  shadow' />  

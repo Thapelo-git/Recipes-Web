@@ -6,7 +6,7 @@ import { FaBars, FaBook } from 'react-icons/fa'
 import Logo from '/assets/vegan-huggs-logo-retina.png'
 import { useLocation } from 'react-router-dom'
 import { MdFavorite } from 'react-icons/md'
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 function Navbar({ menuOpen, setMenuOpen }) {
 const { theme } = useTheme();
   const {pathname} = useLocation();
@@ -43,15 +43,15 @@ const { theme } = useTheme();
   <div className={`hidden md:block w-[20%] ${bgColor} h-screen fixed top-0 pt-10 left-0`}>
  <nav className={`h-full ${bgColor} flex flex-col items-center justify-between p-4 `}>
       <div className='flex flex-col items-center justify-between h-full'>
-        <Link to="/">
+        <Link to="/" className='bg-white/5 p-2 rounded-full backdrop-invert backdrop-opacity-5'>
         <img src={Logo} alt='Logo' className='w-44 h-34 mb-4' />
         </Link>
         <div className='flex flex-col items-center space-y-8'>
         {
           isHome ?(
-           <div className='w-44 h-10 flex flex-row items-center justify-center bg-orange-300 rounded-lg '>
-            <FaBook className='text-l text-black mr-2 ' /> 
-            <Link to="/" className='text-black text-lg'>Recipes</Link>
+           <div className='w-44 h-10 flex flex-row items-center justify-center bg-orange-400 rounded-lg '>
+            <FaBook className='text-l text-white mr-2 ' /> 
+            <Link to="/" className='text-white text-lg'>Recipes</Link>
             
             
            </div>
@@ -67,9 +67,9 @@ const { theme } = useTheme();
         
         {
           isFavorites ? (
-            <div className='w-44 h-10 flex items-center  justify-center  bg-orange-300 rounded-lg'>
-          <MdFavorite className='text-l text-black mr-2' />
-          <Link to="/favorites" className='text-black text-lg'>Favorites</Link>
+            <div className='w-44 h-10 flex items-center  justify-center  bg-orange-400 rounded-lg'>
+          <MdFavorite className='text-l text-white mr-2' />
+          <Link to="/favorites" className='text-white text-lg'>Favorites</Link>
           
         </div>
           ):(

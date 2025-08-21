@@ -2,11 +2,13 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { ThemeProvider } from './components/ThemeContext.jsx'
-import Search from './components/Search.jsx'
-import { SearchProvider } from './components/SearchContext.jsx'
-import { RecipesProvider } from './components/RecipesContext.jsx'
-import { FavoritesProvider} from './components/FAvoritesContext.jsx'
+import { FavoritesProvider } from './contexts/FAvoritesContext.jsx'
+import { RecipesProvider } from './contexts/RecipesContext.jsx'
+import { SearchProvider } from './contexts/SearchContext.jsx'
+import { ThemeProvider } from './contexts/ThemeContext.jsx'
+
+
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FavoritesProvider>
