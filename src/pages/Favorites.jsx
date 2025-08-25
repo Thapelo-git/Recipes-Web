@@ -2,7 +2,7 @@ import React from 'react'
 import {useFavorites} from '../contexts/FAvoritesContext'
 import { useRecipes } from '../contexts/RecipesContext'
 import RecipeCard from '../components/RecipeCard';
-import FilteredRecipes from '../components/FilteredRecipes';
+
 import { Link } from 'react-router-dom';
 function Favorites() {
   const {recipes}=useRecipes()
@@ -10,7 +10,7 @@ function Favorites() {
   const favoriteRecipes = recipes.filter(recipe => favorites.includes(recipe.id));
   return (
     <>
-     {FilteredRecipes.length > 0 ? <RecipeCard recipes={favoriteRecipes}/>:<div className='flex justify-center items-center w-screen h-screen flex-col'>
+     {favoriteRecipes.length > 0 ? <RecipeCard recipes={favoriteRecipes}/>:<div className='flex justify-center items-center w-screen h-screen flex-col'>
       <p>No Favories</p>
       <Link to="/" className='text-white text-sm p-2 rounded-lg bg-green-400 '>Home</Link>
       </div> }  
