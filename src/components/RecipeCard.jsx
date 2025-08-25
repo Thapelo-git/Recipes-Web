@@ -20,14 +20,15 @@ function RecipeCard({recipes,selectedTag}) {
   return (
     <div className={`md:overflow-x-auto md:snap-x md:snap-mandatory 
     flex flex-col md:flex-row
-     md:scrollbar-hide gap-6 p-6  w-full `}>
+     md:scrollbar-hide gap-6 p-6  w-full  `}>
         {
             filteredRecipes.map((recipe, index) => {
                 const fav = isFavorite(recipe.id);
                 return (
                 <div key={index} 
                 className={`md:snap-center md:snap-always  hover:border-2 hover:border-orange-400
-                ${theme === 'light' ?'bg-white':'bg-white/5  backdrop-invert backdrop-opacity-10'}  p-4 rounded-xl h-90 w-100  md:w-72  gap-3 flex flex-col items-center `}>
+                ${theme === 'light' ?'bg-white':'bg-white/5  backdrop-invert backdrop-opacity-10'} 
+                 p-4 rounded-xl h-90 w-100  md:w-72  gap-3 flex flex-col items-center shadow-md shadow-amber-200 `}>
                  <div className='h-58 w-48 '>
                   <img src={recipe.image}  className='h-48 w-68 rounded-xl  top-0  shadow' />  
                   </div> 

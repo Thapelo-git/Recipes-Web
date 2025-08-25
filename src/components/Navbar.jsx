@@ -74,7 +74,7 @@ const { theme } = useTheme();
         </div>
           ):(
             <div className='w-44 h-10 border-1 border-gray-300 flex flex-row items-center justify-center bg-white rounded-lg '>
-            <FaBook className='text-l text-gray-300 mr-2 ' /> 
+            <MdFavorite className='text-l text-gray-300 mr-2 ' /> 
             <Link to="/favorites" className='text-gray-300 text-lg'>Favorites</Link>
             
             
