@@ -50,7 +50,7 @@ function Search() {
         {search && filtered.length === 0 && (
           <div className={`${textColor} `}>No recipes match your search</div>
         )}
-      
+  
         <ul className={` ${theme=='light'?'bg-white':'bg-white/5  backdrop-invert backdrop-opacity-10'} `}>
           {filtered.map(recipe => (
             <li key={recipe.id} onClick={() => navigate(`/filtered/${recipe.id}`)}

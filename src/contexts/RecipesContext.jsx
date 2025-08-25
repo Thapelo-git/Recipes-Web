@@ -8,9 +8,9 @@ export const RecipesProvider = ({ children }) => {
 
   useEffect(() => {
     async function fetchRecipes() {
-      const res = await fetch('http://localhost:5000/recipes');
+      const res = await fetch('/recipes.json');
       const data = await res.json();
-      setRecipes(data);
+      setRecipes(data.recipes);
     }
     fetchRecipes();
   }, []);
