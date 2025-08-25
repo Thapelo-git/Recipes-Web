@@ -1,23 +1,16 @@
 import React from 'react'
 import { useSearch } from '../contexts/SearchContext'
-//import { useRecipes } from '../contexts/RecipesContext'
+
 import { useNavigate } from 'react-router-dom'
-import FilteredRecipes from './FilteredRecipes';
+//import FilteredRecipes from './FilteredRecipes';
 import { useTheme } from '../contexts/ThemeContext';
+import { MdClose } from 'react-icons/md';
 function Search() {
     const navigate = useNavigate();
-    //const {recipes}=useRecipes()
+    
     const { theme } = useTheme();
     const {search,onSearchChange,filtered,searchRef,setSearch} =useSearch();
-    // const filtered = searchQuery
-    // ? recipes.filter(recipe =>
-    //     recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) && 
-    //     // recipe.tags.join('').toLowerCase().includes(searchQuery.toLowerCase()) &&
-    //     recipe.ingredients.some(ing =>
-    //         ing.name.toLowerCase().includes(searchQuery.toLowerCase())
-    //     )
-    //   )
-    // : [];
+    
    
 //const filteredIds = filtered.map(r=>r.id)
  const bgColor = theme === 'light'?"bg-white":"bg-white/5  backdrop-invert backdrop-opacity-10"
@@ -32,6 +25,7 @@ function Search() {
         >
           Close
         </button>
+        <div className='w-full p-2 border rounded mb-4 flex flex-row justify-between'>
         <input
         ref={searchRef}
           type="text"
@@ -39,14 +33,25 @@ function Search() {
           onChange={onSearchChange}
           placeholder="Search recipes..."
           className={`${textColor}  ${theme === "light"
-      ? "placeholder-gray-500 text-black"
-      : "placeholder-gray-300 text-white bg-gray-500"} w-full p-2 border rounded mb-4`}
+      ? "placeholder-gray-200 text-black"
+      : "placeholder-gray-200 text-white "} w-full border-b`}
         />
+             {search && (
+    <button
+      onClick={() => setSearch('')}
+      className="px-3 py-2 text-sm rounded "
+    >
+      <MdClose size={18} className={`${theme === "light"
+      ? " text-black"
+      : " text-white "} `}/>
+    </button>
+  )}
+        </div>
         {search && filtered.length === 0 && (
           <div className={`${textColor} `}>No recipes match your search</div>
         )}
       
-        <ul className={` ${theme=='light'?'bg-white/5  backdrop-invert backdrop-opacity-10':'bg-white'} `}>
+        <ul className={` ${theme=='light'?'bg-white':'bg-white/5  backdrop-invert backdrop-opacity-10'} `}>
           {filtered.map(recipe => (
             <li key={recipe.id} onClick={() => navigate(`/filtered/${recipe.id}`)}
              className="p-2 flex flex-row gap-8 border-b">
@@ -60,14 +65,7 @@ function Search() {
             </li>
           ))}
         </ul>
-           {search && (
-    <button
-      onClick={() => setSearch('')}
-      className="px-3 py-2 text-sm rounded bg-gray-200 hover:bg-gray-300"
-    >
-      Reset
-    </button>
-  )}
+      
       </div>
     </div>
     
