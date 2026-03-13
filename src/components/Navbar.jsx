@@ -15,6 +15,7 @@ const { theme } = useTheme();
    const [animationData, setAnimationData] = useState(null);
  const bgColor = theme === 'light'?"bg-white":"bg-black"
  const textColor = theme === 'light'?"text-black":"text-white"
+
   useEffect(() => {
     fetch("/assets/Chef.json") 
       .then(res => res.json())
@@ -91,10 +92,10 @@ const { theme } = useTheme();
       
            
       <div>
-        {
-         theme === 'light' && (<Lottie animationData={animationData} loop={true} className='w-48 h-58' />)
-        }
-      
+        {/* {
+         theme === 'light' && ()
+        } */}
+      <Lottie animationData={animationData} loop={true} className='w-48 h-58' />
       </div>
       </div>
     </nav>

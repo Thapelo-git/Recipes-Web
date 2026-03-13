@@ -1,6 +1,7 @@
  import React ,{useState}from 'react'
 import './App.css'
 //https://dribbble.com/shots/24052547-Coin-Sensei-Money-Tracker-App
+//https://dribbble.com/shots/26924140-AI-Food-Scanner-App
 import { BrowserRouter as Router,Route, Routes} from 'react-router-dom'
 
 import Header from './components/Header'
@@ -16,6 +17,7 @@ import Favorites from './pages/Favorites'
 import RecipeDetails from './pages/RecipeDetails'
 import Dashboard from './pages/Dashboard'
 import { useTheme } from './contexts/ThemeContext'
+import CardDetails from './pages/CardDetails'
 function App() {
  const  [menuOpen,setMenuOpen]=useState(false)
 const { theme } = useTheme();
@@ -25,14 +27,14 @@ const { theme } = useTheme();
     <Navbar  menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
     </div>
       <Header setMenuOpen={setMenuOpen}/>
-      <div className={`${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'} md:w-[80%]  h-screen   flex md:ml-[20%]   overflow-x-auto scrollbar-hide`}>
+      <div className={`${theme === 'light' ? 'bg-white text-black' : 'bg-black text-white'}    overflow-x-auto scrollbar-hide`}>
       <Routes >
          
         <Route path='/' element={<Dashboard/>} />
          <Route path='/favorites' element={<Favorites/>} />
          <Route path="/search" element={<Search />} />
          <Route path="/filtered/:ids" element={<FilteredRecipes/>} />
-         <Route path="/recipeDetails/:id" element={<RecipeDetails/>} />
+         <Route path="/recipeDetails/:id" element={<CardDetails/>} />
       </Routes>
       
           
