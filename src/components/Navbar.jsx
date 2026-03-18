@@ -53,8 +53,7 @@ const { theme } = useTheme();
            <div className='w-44 h-10 flex flex-row items-center justify-center bg-orange-400 rounded-lg '>
             <FaBook className='text-l text-white mr-2 ' /> 
             <Link to="/" className='text-white text-lg'>Recipes</Link>
-            
-            
+
            </div>
           ) :(
              <div className='w-44 h-10 border-1 border-gray-300 flex flex-row items-center justify-center bg-white rounded-lg '>

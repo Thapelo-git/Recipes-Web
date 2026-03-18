@@ -37,7 +37,9 @@ function Header({setMenuOpen}) {
             </div>
            <div className='md:hidden flex justify-between w-full mb-4 '>
              <Link to="/" className='bg-white/5 p-1 rounded-full backdrop-invert backdrop-opacity-5'>
-             <img src={Logo} alt='Logo' className='w-22 h-14' />
+             <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-3xl shadow-lg">
+                👩‍🍳
+              </div>
              </Link>
              <div className='flex flex-row items-center space-x-4'>
              
