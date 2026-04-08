@@ -13,7 +13,6 @@ import {
 const navItems = [
   { title: "Recipes", url: "/", icon: ChefHat },
   { title: "Favorites", url: "/favorites", icon: Heart },
-
 ];
 
 export function AppSidebar() {
@@ -21,42 +20,46 @@ export function AppSidebar() {
   const collapsed = state === "collapsed";
 
   return (
-    <Sidebar collapsible="icon" className="border-r-0 ">
-      <SidebarHeader className="items-center pt-6 pb-4">
-        {!collapsed && (
-          <>
-            <h2 className="text-2xl font-display font-bold italic text-foreground">Chefie</h2>
-            <div className="mt-4 flex flex-col items-center gap-2">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-3xl shadow-lg">
+    <Sidebar collapsible="icon" className="border-r border-border/40 shadow-2xl shadow-black/5 bg-white md:bg-background/95 backdrop-blur-xl transition-all duration-300">
+      <SidebarHeader className="items-center pt-8 pb-6 px-4">
+        {!collapsed ? (
+          <div className="flex flex-col items-center w-full animate-in fade-in zoom-in-95 duration-500">
+            <h2 className="text-3xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-600 mb-6 drop-shadow-sm tracking-tight text-center">
+              Chefie
+            </h2>
+            <div className="relative group cursor-pointer">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-amber-600 rounded-full blur-[14px] opacity-30 group-hover:opacity-60 transition duration-500"></div>
+              <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-4xl shadow-xl border-4 border-background transform group-hover:scale-[1.03] transition-all duration-300">
                 👩‍🍳
               </div>
-              <div className="text-center">
-                <p className="font-semibold text-foreground text-sm">Theresa Webb</p>
-                <p className="text-xs text-muted-foreground italic">Master Chef</p>
+            </div>
+            <div className="text-center mt-5 space-y-1.5">
+              <p className="font-bold text-foreground text-[17px] tracking-tight">Theresa Webb</p>
+              <div className="bg-orange-500/10 text-orange-500 dark:text-orange-400 text-xs font-semibold px-3 py-1 rounded-full inline-block border border-orange-500/20">
+                Master Chef
               </div>
             </div>
-          </>
-        )}
-        {collapsed && (
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-sm">
+          </div>
+        ) : (
+          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-lg shadow-md mt-2 transition-transform hover:scale-110">
             👩‍🍳
           </div>
         )}
       </SidebarHeader>
 
-      <SidebarContent className="px-3">
-        <SidebarMenu className="gap-1.5">
+      <SidebarContent className="px-3 md:px-4 mt-6">
+        <SidebarMenu className="gap-2.5">
           {navItems.map((item) => (
             <SidebarMenuItem key={item.title}>
-              <SidebarMenuButton asChild size="lg">
+              <SidebarMenuButton asChild size="lg" tooltip={item.title}>
                 <NavLink
                   to={item.url}
                   end
-                  className="rounded-xl px-4 py-2.5 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-foreground"
-                  activeClassName="bg-primary text-primary-foreground shadow-md hover:bg-primary hover:text-primary-foreground"
+                  className="group flex w-full items-center gap-4 rounded-2xl px-4 py-3.5 transition-all duration-300 font-medium text-muted-foreground hover:bg-orange-500/10 hover:text-orange-600 dark:hover:text-orange-400 hover:scale-[1.02]"
+                  activeClassName="!bg-gradient-to-r !from-orange-500 !to-amber-500 !text-white !font-semibold shadow-lg shadow-orange-500/25 scale-[1.02] border-none [&>svg]:!text-white"
                 >
-                  <item.icon className="h-4 w-4 shrink-0" />
-                  {!collapsed && <span className="font-medium">{item.title}</span>}
+                  <item.icon className="h-[22px] w-[22px] shrink-0 transition-transform group-hover:scale-110" />
+                  {!collapsed && <span className="text-[16px] tracking-wide">{item.title}</span>}
                 </NavLink>
               </SidebarMenuButton>
             </SidebarMenuItem>
