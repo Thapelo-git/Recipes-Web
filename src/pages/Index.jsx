@@ -38,12 +38,12 @@ const filteredRecipes =
         <div className="mb-8">
           <h1 className="text-3xl font-bold font-display text-foreground">Recipes</h1>
           <p className="text-muted-foreground mt-1">{recipes.length} delicious recipes to explore</p>
-           <div className='  p-4 flex relative  justify-start items-start   '>
+           <div className='  p-4  justify-start items-start   '>
    
     <TagList allTags={allTags} selectedTag={selectedTag} onTagselect={setSelectedTag}/>
              </div>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-4">
           {paginatedRecipes.map((recipe) => (
             <RecipeCard key={recipe.id}  recipe={recipe} />
           ))}

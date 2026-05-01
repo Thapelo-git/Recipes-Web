@@ -53,7 +53,7 @@ function App() {
                 
                 {/* Mobile Header */}
                 <header className="h-12 flex items-center md:hidden border-b border-border">
-                  <SidebarTrigger className="ml-2" />
+                  {/* <SidebarTrigger className="ml-2" /> */}
                 </header>
 
                 {/* Navbar (side drawer style) */}
@@ -62,7 +62,7 @@ function App() {
                     theme === "light"
                       ? "bg-white text-black"
                       : "bg-black text-white"
-                  }`}
+                  } ${menuOpen ? 'block' : 'hidden md:block'}`}
                 >
                   <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 </div>

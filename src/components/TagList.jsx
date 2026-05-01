@@ -11,7 +11,7 @@ const tagTheme =
     : "bg-white/5 backdrop-invert backdrop-opacity-10 text-gray-400";
   const MAX_VISIBLE = 6
   return (
-    <div className="flex absolute z-10 flex-wrap md:fixed items-center">
+    <div className="flex absolute z-10 flex-wrap  items-center">
   {allTags.slice(0, MAX_VISIBLE).map((tag, i) => (
     <button
       key={i}

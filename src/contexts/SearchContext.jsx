@@ -26,15 +26,24 @@ export const SearchProvider = ({ children }) => {
       }, 300);
     }, []);
     const filtered = useMemo(() => {
-      return recipes.filter(recipe =>{
-       const matchesSearch = recipe.title.toLowerCase().includes(search.toLowerCase()) && 
-        // recipe.tags.join('').toLowerCase().includes(searchQuery.toLowerCase()) &&
-        recipe.ingredients.some(ing =>
-            ing.name.toLowerCase().includes(search.toLowerCase())
-        )
-        return matchesSearch
-    })
-   }, [recipes,search])
+      const normalizedSearch = search.trim().toLowerCase();
+      if (!normalizedSearch) return recipes;
+
+      return recipes.filter(recipe => {
+        const titleMatches = recipe.title.toLowerCase().includes(normalizedSearch);
+        const ingredientMatches = recipe.ingredients.some(ing =>
+          ing.name.toLowerCase().includes(normalizedSearch)
+        );
+        const tagMatches = recipe.tags?.some(tag =>
+          tag.toLowerCase().includes(normalizedSearch)
+        );
+        const dietaryMatches = recipe.dietary?.some(item =>
+          item.toLowerCase().includes(normalizedSearch)
+        );
+
+        return titleMatches || ingredientMatches || tagMatches || dietaryMatches;
+      });
+    }, [recipes, search]);
   //   return recipes.filter((recipe) => {
   //     const matchesSearch = recipe.name
   //       .toLowerCase()
