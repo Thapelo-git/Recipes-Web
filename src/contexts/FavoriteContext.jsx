@@ -8,7 +8,10 @@ export const FavoritesProvider = ({ children }) => {
     const stored = localStorage.getItem('favorites');
     return stored ? JSON.parse(stored) : [];
   });
- 
+      
+
+
+
   useEffect(() => {
     
     localStorage.setItem('favorites', JSON.stringify(favorites));

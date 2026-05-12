@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { FaCircle, FaHeart } from "react-icons/fa";
 import { useRecipes } from "../contexts/RecipesContext";
 import { useTheme } from "../contexts/ThemeContext";
-import { useFavorites } from "../contexts/FavoritesContext";
+import { useFavorites } from "../contexts/FavoriteContext"; 
 //https://dribbble.com/shots/23548096-Food-Website
 function RecipeDetails() {
   const { id } = useParams();

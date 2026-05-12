@@ -1,5 +1,5 @@
 import React from "react";
-import { useFavorites } from "../contexts/FavoritesContext";
+import { useFavorites } from "../contexts/FavoriteContext";
 import { useRecipes } from "../contexts/RecipesContext";
 import RecipeCard from "../components/RecipeCard";
 import { Heart } from "lucide-react";
