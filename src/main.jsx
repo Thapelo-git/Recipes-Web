@@ -2,10 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import { FavoritesProvider } from './contexts/FavoritesContext.jsx'
+
 import { RecipesProvider } from './contexts/RecipesContext.jsx'
 import { SearchProvider } from './contexts/SearchContext.jsx'
 import { ThemeProvider } from './contexts/ThemeContext.jsx'
+import { FavoritesProvider } from './contexts/FavoritesContext.jsx'
 
 
 
