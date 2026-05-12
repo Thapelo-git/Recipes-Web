@@ -12,7 +12,7 @@ function RecipeCard({ recipe}) {
  
 
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
-  // const bgColor = theme === 'light'?"bg-white":"bg-black"
+
   const textColor = theme === "light" ? "text-black" : "text-gray-400";
   const fav = isFavorite(recipe.id);
   return (

@@ -28,7 +28,7 @@ function Navbar({ menuOpen, setMenuOpen }) {
       .catch((e) => console.log('Animation failed to load', e));
   }, []);
 
-  const NavItem = ({ to, isActive, icon: Icon, label }) => {
+  const NavItem = ({ to, isActive,  label }) => {
     return (
       <Link
         to={to}

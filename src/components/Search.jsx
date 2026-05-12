@@ -2,7 +2,7 @@ import React from 'react'
 import { useSearch } from '../contexts/SearchContext'
 
 import { useNavigate } from 'react-router-dom'
-//import FilteredRecipes from './FilteredRecipes';
+
 import { useTheme } from '../contexts/ThemeContext';
 import { MdClose } from 'react-icons/md';
 function Search() {
