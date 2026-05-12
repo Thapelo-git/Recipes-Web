@@ -10,6 +10,7 @@ export const FavoritesProvider = ({ children }) => {
   });
  
   useEffect(() => {
+    
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
