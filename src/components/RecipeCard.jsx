@@ -4,7 +4,7 @@ import { IoMdStarHalf } from "react-icons/io";
 import { IoStarSharp, IoTimeOutline } from "react-icons/io5";
 import { MdOutlineStarOutline } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { useFavorites } from "../contexts/FavoritesContext";
+import { useFavorites } from "../contexts/FavoriteContext";
 import { useTheme } from "../contexts/ThemeContext";
 function RecipeCard({ recipe}) {
   const navigate = useNavigate();
